@@ -43,6 +43,7 @@ public class CollectionTest {
             private final String value = "same value";
         }
 
+        @SuppressWarnings({"Raw use of parameterized class 'Collection'", "rawtypes"})
         Collection c1 = Arrays.asList(121, "hello", new A("same value"), new B());
         assert c1.contains(new A("same value"));
         assert 3 == count[0];
