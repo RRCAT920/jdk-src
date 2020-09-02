@@ -83,7 +83,7 @@ public class CollectionTest {
      * 使用 SafeVarargs 注解的替代方法是采用条目 28 的建议，并用 List 参数替换可变参数（这
      * 是一个变相的数组）
      */
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings({"all"})
     @Test
     public void testAsList() {
         Collection collection = Arrays.asList(1, 2);
