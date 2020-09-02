@@ -15,6 +15,7 @@ public class CollectionTest {
      */
     @Test
     public void testContains() {
+        /* 最终事实常量的技巧 */
         final int[] count = {0};
 
         class A {
@@ -48,5 +49,17 @@ public class CollectionTest {
         assert c1.contains(new A("same value"));
         assert 3 == count[0];
         assert !c1.contains(new B());
+    }
+
+
+    @SuppressWarnings("rawtypes")
+    @Test
+    public void testClearForArraysAsList() {
+        Collection collection = Arrays.asList(1, 2, 3);
+        try {
+            collection.clear();
+        } catch (UnsupportedOperationException e) {
+            System.out.println("Arrays.asList返回的是内部类，而不是java.util.ArrayList");
+        }
     }
 }
