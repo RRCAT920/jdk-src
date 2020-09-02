@@ -1,9 +1,6 @@
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * @author huzihao
@@ -72,5 +69,25 @@ public class IteratorTest {
             assert 1 == (Integer) collection.iterator().next();
             System.out.println("Running");
         }
+    }
+
+    /**
+     * 5.0 foreach不会改变容器的元素
+     */
+    @Test
+    public void testForeach() {
+        var strings = new String[]{"A", "B", "C"};
+
+        for (String string : strings) {
+            string = "C";
+        }
+
+        assert "[A, B, C]".equals(Arrays.toString(strings));
+
+        for (int i = 0; i < strings.length; i++) {
+            strings[i] = "C";
+        }
+
+        assert "[C, C, C]".equals(Arrays.toString(strings));
     }
 }
