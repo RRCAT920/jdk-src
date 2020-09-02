@@ -29,6 +29,7 @@ public class IteratorTest {
 
     /**
      * 🙅错误的迭代方式1
+     * next每次都会移动游标
      */
     @Test
     public void wrongTraverse1() {
@@ -57,7 +58,8 @@ public class IteratorTest {
     }
 
     /**
-     * 🙅错误的迭代方式1
+     * 🙅错误的迭代方式2
+     * iterator会返回新的迭代器
      */
     @Test
     public void wrongTraverse() {
