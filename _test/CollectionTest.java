@@ -1,6 +1,5 @@
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
@@ -61,6 +60,7 @@ public class CollectionTest {
         } catch (UnsupportedOperationException e) {
             System.out.println("Arrays.asList返回的是内部类，而不是java.util.ArrayList");
         }
+
     }
 
     /**
