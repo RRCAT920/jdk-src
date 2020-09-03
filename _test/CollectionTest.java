@@ -99,7 +99,7 @@ public class CollectionTest {
      * List去除重复值
      */
     @Test
-    public void listWithSet() {
+    public void listFilterWithSet() {
         var list = new ArrayList(5);
         list.add(1);
         list.add(2);
