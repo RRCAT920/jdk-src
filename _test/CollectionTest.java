@@ -107,10 +107,7 @@ public class CollectionTest {
         list.add(3);
         list.add(3);
 
-        var set = new HashSet();
-        set.addAll(list);
-
-        list = new ArrayList(set);
+        list = new ArrayList(new HashSet(list));
         assert "[1, 2, 3]".equals(list.toString());
     }
 }
