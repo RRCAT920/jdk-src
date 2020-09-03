@@ -1,8 +1,6 @@
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author huzihao
@@ -95,5 +93,24 @@ public class CollectionTest {
         Collection collection2 = Arrays.asList(new Integer[]{1, 2});
         assert 2 == collection2.size();
 //        System.out.println(new Integer[]{1, 2});
+    }
+
+    /**
+     * List去除重复值
+     */
+    @Test
+    public void listWithSet() {
+        var list = new ArrayList(5);
+        list.add(1);
+        list.add(2);
+        list.add(2);
+        list.add(3);
+        list.add(3);
+
+        var set = new HashSet();
+        set.addAll(list);
+
+        list = new ArrayList(set);
+        assert "[1, 2, 3]".equals(list.toString());
     }
 }
