@@ -558,6 +558,8 @@ public class Collections {
     public static <T> void copy(List<? super T> dest, List<? extends T> src) {
         int srcSize = src.size();
         if (srcSize > dest.size())
+            // 调用copy之前，使用此技巧
+            // var dest = Arrays.asList(new Object[src.size()]);
             throw new IndexOutOfBoundsException("Source does not fit in dest");
 
         if (srcSize < COPY_THRESHOLD ||
