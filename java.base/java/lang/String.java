@@ -147,7 +147,7 @@ public final class String
      * {@link Stable} is safe here, because value is never null.
      */
     @Stable
-    private final byte[] value;
+    private final byte[] value; // JDK9
 
     /**
      * The identifier of the encoding used to encode the bytes in
